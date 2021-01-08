@@ -17,10 +17,20 @@ COPY mix.exs mix.lock ./
 COPY config config
 RUN mix do deps.get, deps.compile
 
-# build assets
+FROM node:14.15 as frontend
+WORKDIR /app/
+COPY assets/package.json assets/package-lock.json /app/
+COPY --from=builder /app/deps/phoenix_live_view /deps/phoenix_live_view
+COPY --from=builder /app/deps/phoenix /deps/phoenix
+COPY --from=builder /app/deps/phoenix_html /deps/phoenix_html
 RUN npm install -g npm@6.14.9 && npm install
-COPY assets/package.json assets/package-lock.json ./assets/
-RUN npm --prefix ./assets ci --progress=false --no-audit --loglevel=error
+COPY assets /app/
+RUN npm run deploy
+
+# # build assets
+# RUN npm install -g npm@6.14.9 && npm install
+# COPY assets/package.json assets/package-lock.json ./assets/
+# RUN npm --prefix ./assets ci --progress=false --no-audit --loglevel=error
 
 COPY priv priv
 COPY assets assets
