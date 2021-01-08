@@ -2,7 +2,7 @@ FROM elixir:1.11.3-alpine AS build
 # install build dependencies
 RUN apk update && \
     apk upgrade --no-cache && \
-    apk add --no-cache gcc g++ git python make musl-dev && \
+    apk add --no-cache gcc g++ git make musl-dev && \
     mix local.rebar --force && \
     mix local.hex --force
 
