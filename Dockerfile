@@ -20,28 +20,35 @@ RUN mix do deps.get, deps.compile
 FROM node:14.15 as frontend
 WORKDIR /app/
 COPY assets/package.json assets/package-lock.json /app/
-COPY --from=builder /app/deps/phoenix_live_view /deps/phoenix_live_view
-COPY --from=builder /app/deps/phoenix /deps/phoenix
-COPY --from=builder /app/deps/phoenix_html /deps/phoenix_html
+COPY --from=build /app/deps/phoenix_live_view /deps/phoenix_live_view
+COPY --from=build /app/deps/phoenix /deps/phoenix
+COPY --from=build /app/deps/phoenix_html /deps/phoenix_html
 RUN npm install -g npm@6.14.9 && npm install
 COPY assets /app/
 RUN npm run deploy
+
+FROM build as releaser
+ENV MIX_ENV=prod
+COPY --from=frontend /priv/static /app/priv/static
+COPY . /app/
+RUN mix phx.digest
+RUN mix release
 
 # # build assets
 # RUN npm install -g npm@6.14.9 && npm install
 # COPY assets/package.json assets/package-lock.json ./assets/
 # RUN npm --prefix ./assets ci --progress=false --no-audit --loglevel=error
 
-COPY priv priv
-COPY assets assets
-RUN npm run --prefix ./assets deploy
-RUN mix phx.digest
+# COPY priv priv
+# COPY assets assets
+# RUN npm run --prefix ./assets deploy
+# RUN mix phx.digest
 
-# compile and build release
-COPY lib lib
-# uncomment COPY if rel/ exists
-# COPY rel rel
-RUN mix do compile, release
+# # compile and build release
+# COPY lib lib
+# # uncomment COPY if rel/ exists
+# # COPY rel rel
+# RUN mix do compile, release
 
 # prepare release image
 FROM alpine:3.11 AS app
