@@ -5,7 +5,7 @@
   description: "Building a smart sprinkler controller with off-the-shelf parts and Nerves"
 }
 ---
-![iot parts](images/drizzle-title.jpeg)
+![iot parts](../images/drizzle-title.jpeg)
 <figcaption>Everything you need to build a smart sprinkler controller (almost.)</figcaption>
 
 <br />
@@ -19,7 +19,7 @@ There is one company in particular that makes an excellent off-the-shelf smart s
 ## How do sprinkler controllers work?
 
 Your sprinkler controller at home is a very simple electro-mechanical device. It relies on a power supply, relays, and solenoids.
-![sprinkler system diagram](images/drizzle-diagram1.png)
+![sprinkler system diagram](../images/drizzle-diagram1.png)
 <figcaption>Red represents power, blue represents water.</figcaption>
 
 <br />
@@ -27,7 +27,7 @@ Your sprinkler controller at home is a very simple electro-mechanical device. It
 Nearly all sprinkler systems will work off of a 24vAC power supply. Some might go as high as 30v, but the important point to notice here is that this is AC. Almost everything else in your life with a transformer plug these days (some kind of box between the outlet and your device) is converting your wall power (110vAC in the USA) to a lower voltage DC. I don’t want to explain the distinction between the types of power, but let us just say that they are very different.
 
 That power supply goes to a box which accepts input for scheduling and contains a series of relays (1 for each zone in your system.)
-![mechanical relay](images/drizzle-diagram2.png)
+![mechanical relay](../images/drizzle-diagram2.png)
 
 <br />
 
@@ -38,17 +38,17 @@ Each relay takes a signal wire and a power wire. The type of current and voltage
 
 <br />
 
-![relays](images/drizzle-relay1.png)
+![relays](../images/drizzle-relay1.png)
 <figcaption>Relay board wired up</figcaption>
 
 <br />
 
-![relays](images/drizzle-relay2.png)
+![relays](../images/drizzle-relay2.png)
 <figcaption>The right-most terminal on each relay is for power. These are chained together from one power supply source.</figcaption>
 
 <br />
 
-![relays](images/drizzle-relay3.png)
+![relays](../images/drizzle-relay3.png)
 <figcaption>The center terminal is for signal. These go out to each valve.</figcaption>
 
 ---
@@ -57,14 +57,14 @@ Next stop is the valve box.
 
 Looking inside your valve box you will see a manifold with 2 or 3 or 4 irrigation valves connected to it. Each if these has a common wire and signal wire on it. The common wires are all connected together. The signal wire is the ire coming from your relay.
 
-![valve](images/drizzle-valve1.png)
+![valve](../images/drizzle-valve1.png)
 <figcaption>Irrigation valve. (source unknown.)</figcaption>
 
 <br />
 
 An electromagnetic solenoid works by retracting a plunger when a charge is applied. A spring replaces the plunger when the charge is removed.
 
-![valve](images/drizzle-diagram3.png)
+![valve](../images/drizzle-diagram3.png)
 <figcaption>A very bad illustration of a solenoid.</figcaption>
 
 <br />
@@ -89,7 +89,7 @@ You can see the [completed code on GitHub](https://github.com/drizzle-org/drizzl
 ## Weather Forecast
 
 First, we need to create a data store. In this case, I chose an Agent to store the weather data.
-![code](images/drizzle-code1.png)
+![code](../images/drizzle-code1.png)
 <figcaption>weather_data.ex</figcaption>
 
 <br />
@@ -103,7 +103,7 @@ For a really good introduction into Agents, I recommend watching [this video](ht
 ---
 
 The next step is to go out and collect the weather forecast. I chose to use the Darksky API for local weather, but there are many others to chose from.
-![code](images/drizzle-code2.png)
+![code](../images/drizzle-code2.png)
 <figcaption>weather.ex</figcaption>
 
 <br />
@@ -117,7 +117,7 @@ The watering schedule is set up in the application config. Unfortunately, this m
 Each day of the week is represented, and scheduling a zone is just a matter of adding a tuple to that day in the config. The tuple is defined as `{zone, part_of_day, duration_in_mins}`
 
 Part of day represents a range of hours to allow watering. I chose to allow 5–8am and 9–11pm. When the schedule is built, it will only schedule watering in those blocks.
-![code](images/drizzle-code3.png)
+![code](../images/drizzle-code3.png)
 <figcaption>config.exs</figcaption>
 
 <br />
@@ -125,7 +125,7 @@ Part of day represents a range of hours to allow watering. I chose to allow 5–
 ## Being “Smart”
 
 Being smart means modifying the watering schedule when it is raining, or if the weather is too hot or too cold.
-![code](images/drizzle-code4.png)
+![code](../images/drizzle-code4.png)
 <figcaption>weather_data.ex</figcaption>
 
 <br />
@@ -139,7 +139,7 @@ The same sort of logic follows for precipitation. Depending on the amount of rai
 ## Next-level
 
 In order to get more precise data on your lawn conditions you will need additional hardware. The easiest add-on would be 1 or more moisture sensors.
-![code](images/drizzle-soil-sensor.jpeg)
+![code](../images/drizzle-soil-sensor.jpeg)
 <figcaption>https://www.sparkfun.com/products/13322</figcaption>
 
 <br />

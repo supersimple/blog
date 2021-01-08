@@ -1,15 +1,9 @@
-<% rows = Enum.chunk_every(@articles, 2) %>
-<div id="home-container">
-  <%= for row <- rows do %>
-    <section>
-      <%= for article <- row do %>
-        <article>
-          <h2><%= Calendar.strftime(article.date, "%Y %m %d") %></h2>
-          <a href="/<%= article.id %>">
-            <h1><%= article.title %></h1>
-          </a>
-        </article>
-      <% end %>
-    </section>
-  <% end %>
+<div id="banner" style="background: no-repeat center 33% url(images/lg-skull.svg);background-size: 40vh 40vh;"></div>
+<div id="desc">
+<h1>Todd Resudek</h1>
+<h2>Human Software Developer</h2>
+</div>
+<div id="links">
+<a href="https://twitter.com/sprsmpl"><img alt="twitter" src="images/twitter.svg"></a>
+<a href="https://github.com/supersimple"><img alt="github" src="images/github.svg"></a>
 </div>

@@ -1,0 +1,26 @@
+<main role="main" class="container mx-auto max-w-screen-md px-6">
+<img src="../images/skull.svg" id="logo" alt="logo"/>
+<section>
+<%= if @article do %>
+    <article class="post">
+        <h1><%= @article.title %></h1>
+        <h3 class="author">Published by: <%= @article.author %> on <%= Calendar.strftime(@article.date, "%B %-d, %Y") %></h3>
+        <%= raw @article.body %>
+    </article>
+<% else %>
+<h1 class="error">Oops. That link cannot be found.</h1>
+<% end %>
+</section>
+</main>
+<footer>
+<nav>
+    <h1>More Posts</h1>
+    <ul>
+    <%= for article <- @articles do %>
+        <li>
+            <a href="/blog/<%= article.id %>"><%= article.title %></h1></a>
+        </li>
+    <% end %>
+    </ul>
+</nav>
+</footer>

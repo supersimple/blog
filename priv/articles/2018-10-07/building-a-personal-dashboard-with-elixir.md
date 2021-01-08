@@ -5,7 +5,7 @@
   description: "Using a raspberry pi and a television to make a personal dashboard"
 }
 ---
-![dashboard in action](images/dashboard-title.jpeg)
+![dashboard in action](../images/dashboard-title.jpeg)
 <figcaption>49 inch Vizio monitor running my dashboard</figcaption>
 
 <br />
@@ -26,7 +26,7 @@ Fortunately, there were API wrappers available on hex.pm for Github and Darksky 
 
 For the time and date, I opted to use javascript. Not react, angular, vue, next, ember, or whatever the framework du jour is. Just regular old javascript.
 
-![code](images/dashboard-code1.png)
+![code](../images/dashboard-code1.png)
 <figcaption>time-and-date.js</figcaption>
 
 <br />
@@ -35,7 +35,7 @@ There are examples online of updating the time and date using elixir, but I thou
 
 For the other data, I wanted to keep the data fresh, but it didnt need to be updated every second or even every minute. I opted for a genserver that calls itself every 15 minutes.
 
-![code](images/dashboard-code2.png)
+![code](../images/dashboard-code2.png)
 <figcaption>genserver.ex</figcaption>
 
 <br />
@@ -44,7 +44,7 @@ Since the data being updated doesn’t change that often, I chose an interval th
 
 You can see on line 30 where I set the interval. On line 23 is the call to get all the data for current dashboard state, which is then broadcast via a channel on line 24.
 
-![code](images/dashboard-code3.png)
+![code](../images/dashboard-code3.png)
 <figcaption>dashboard.ex</figcaption>
 
 <br />
@@ -56,7 +56,7 @@ Each time the genserver calls itself, this code is processed. It builds a data s
 ## Part 2: Hardware
 
 The dashboard starts with an available monitor. In my case, I have a 49 inch Vizio TV in my office that only gets used to watch baseball day games about 20 times per year. That means most of it’s life is spent idle.
-![code](images/dashboard-parts.jpeg)
+![code](../images/dashboard-parts.jpeg)
 <figcaption>Raspberry Pi, Memory Card, Case, and HDMI Cable</figcaption>
 
 <br />
@@ -126,7 +126,7 @@ Next, there are some special files used by the Raspberry Pi OS to startup the ma
 
 Now type:sudo nano `/etc/lightdm/lightdm.conf` Look for the line that starts with `xserver-command` and change it to:
 
-![code](images/dashboard-code4.png)
+![code](../images/dashboard-code4.png)
 <figcaption>lightdm.conf</figcaption>
 
 <br />
@@ -135,7 +135,7 @@ This will tell the Pi not to go to sleep and not show a cursor.
 
 Finally, type: `sudo nano ~/.config/lxsession/LXDE-pi/autostart` and add these contents:
 
-![code](images/dashboard-code5.png)
+![code](../images/dashboard-code5.png)
 <figcaption>autostart</figcaption>
 
 <br />

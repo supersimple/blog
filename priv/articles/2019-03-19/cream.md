@@ -9,7 +9,7 @@
 _When this article was published ConCache was an active project. Since then Cachex has replaced it. It is very similar, so most parts of this article are still valid/useful._
 ---
 
-![cream](images/cream.jpeg)
+![cream](../images/cream.jpeg)
 
 An API project I have been working on recently uses a plug to get the current user and authenticate them. This is not uncommon, but as a user navigates through the application, they will be authenticating on every request. In the interest of performance, I wondered if we could do better.
 
@@ -34,13 +34,13 @@ In this case, it takes the results of my query (which is a user struct with a pr
 Implementation is quite simple.
 
 Step 1. Add the library to mix.exs
-![code](images/cream-code1.png)
+![code](../images/cream-code1.png)
 <figcaption>mix.exs</figcaption>
 
 <br />
 
 Step 2. Add ConCache to the application supervisor
-![code](images/cream-code2.png)
+![code](../images/cream-code2.png)
 <figcaption>application.ex</figcaption>
 
 <br />
@@ -61,13 +61,13 @@ And the touch_on_read option resets that expiration time every time you read fro
 What this means is that if you hit the cache at least once every 2 seconds the cache could never expire. Also, since the expiration is 2 seconds and the heartbeat is 2 seconds, the longest a row can live without being touched is 4 seconds (well, 3,999 ms technically.)
 
 The next step in implementation is to replace the lookup query with code that checks the cache first. In the auth plug, replace this code:
-![code](images/cream-code3.png)
+![code](../images/cream-code3.png)
 <figcaption>auth_plug.ex</figcaption>
 
 <br />
 
 with this code:
-![code](images/cream-code4.png)
+![code](../images/cream-code4.png)
 <figcaption>auth_plug.ex</figcaption>
 
 <br />
@@ -76,12 +76,12 @@ This uses the ConCache `get_or_store/3` function to attempt to lookup the result
 
 And finally, some code to manually delete cache rows when the user is mutated:
 
-![code](images/cream-code5.png)
+![code](../images/cream-code5.png)
 <figcaption>user_mutation.ex</figcaption>
 
 <br />
 
-![code](images/mission-accomplished.jpeg)
+![code](../images/mission-accomplished.jpeg)
 <figcaption>Mission Accomplished</figcaption>
 
 ---
@@ -101,7 +101,7 @@ Of these, I decided option 3 was the easiest and made the most sense. Given the 
 So, how did I turn off caching in the test environment?
 
 I abstracted the calls to ConCache to go to a local defined cache store instead. In config, the `@cache_store` is set to `ConCache`. In the `config/test.exs` file it points to a module I defined:
-![code](images/cream-code6.png)
+![code](../images/cream-code6.png)
 <figcaption>cache_store.ex</figcaption>
 
 <br />
@@ -130,28 +130,28 @@ Specifically, the strategy is to have the database send a message to each instan
 
 To do this, I added a function to the database that uses PG_NOTIFY to send a message with metadata about a query. This message will be in json format, and have 3 keys and values; the table name, the operation (update), and the entire row from the query.
 
-![code](images/cream-code7.png)
+![code](../images/cream-code7.png)
 <figcaption>pg_notify.ex</figcaption>
 
 <br />
 
 Then I created a trigger to call that function whenever a user is updated.
 
-![code](images/cream-code8.png)
+![code](../images/cream-code8.png)
 <figcaption>trigger.ex</figcaption>
 
 <br />
 
 And finally, I added some code to my application to accept those messages from the database and take action on them.
 
-![code](images/cream-code9.png)
+![code](../images/cream-code9.png)
 <figcaption>db_listener.ex</figcaption>
 
 <br />
 
 And add this genserver to the application supervisor.
 
-![code](images/cream-code10.png)
+![code](../images/cream-code10.png)
 <figcaption>application.ex</figcaption>
 
 <br />

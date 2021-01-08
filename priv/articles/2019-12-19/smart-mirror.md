@@ -5,7 +5,7 @@
   description: "Building a Smart Mirror with Phoenix LiveView"
 }
 ---
-![UI design](images/mirror-title.png)
+![UI design](../images/mirror-title.png)
 
 ## Project Overview
 
@@ -28,7 +28,7 @@ The idea of a tool that gives me more rich interactions while only writing Elixi
 
 First, let’s talk about the hardware I used for the mirror.
 
-![lcd panel](images/mirror-lcd-panel.jpeg)
+![lcd panel](../images/mirror-lcd-panel.jpeg)
 <figcaption>LED panel with no case or bezel</figcaption>
 
 <br />
@@ -39,7 +39,7 @@ First, let’s talk about the hardware I used for the mirror.
 - HDMI cable and 5v power cable for the Raspberry Pi.
 - A Frame. I built this one using cherry. Use your imagination and come up with whatever appeals to you. _(Tip: most displays will have threads used for vesa mounts you can use, or just friction fit the display in the frame.)_
 
-![frame](images/mirror-case.jpeg)
+![frame](../images/mirror-case.jpeg)
 <figcaption>Cherry frame with mirror installed.</figcaption>
 
 ## The Software
@@ -58,15 +58,15 @@ The application uses Phoenix 1.4 and LiveView 0.4.1. A previous iteration used P
 
 The html view is very simple. Just 2 `live_render/2` calls.
 
-![code](images/mirror-code1.png)
+![code](../images/mirror-code1.png)
 <br />
 
 And here are each of the liveview components:
 
-![code](images/mirror-code2.png)
+![code](../images/mirror-code2.png)
 <br />
 
-![code](images/mirror-code3.png)
+![code](../images/mirror-code3.png)
 <br />
 
 It’s important to note the views are designed to refresh themselves on intervals. For the weather it is every 15 minutes. Obviously the clock needs to be updated more frequently. In this case I am showing hours:minutes:seconds, so it is updating every second.
@@ -111,33 +111,33 @@ There are some special files used by the Raspberry Pi OS to startup the machine 
 
 Type: `sudo nano /etc/lightdm/lightdm.conf` Look for the line that starts with `xserver-command` and change it to:
 
-![code](images/mirror-code4.png)
+![code](../images/mirror-code4.png)
 <br />
 
 This will tell the Pi not to go to sleep and not show a cursor.
 
 Type: `sudo nano ~/.config/lxsession/LXDE-pi/autostart`. Depending on which version of Raspian you are using, this file may or may not already exist. The file should contain the following code:
 
-![code](images/mirror-code5.png)
+![code](../images/mirror-code5.png)
 <br />
 
 This tells the Pi to call the `kiosk.sh` script on startup.
 
 Now, create that file: `sudo nano ~/kiosk.sh`. It should contain this code:
 
-![code](images/mirror-code6.png)
+![code](../images/mirror-code6.png)
 <br />
 
 This file call unclutter, which hides the cursor after 0.5 seconds of inactivity. It also makes sure Chromium will not show pop-up warnings in the case of not shutting down properly. Finally, it loads the environment variables it needs from a file named .env and it starts up a server using mix.
 
 There are different ways to run a webserver. Mix is the most basic, but also the easiest. Since there will only be 1 client connected at any point I didn’t see a need for anything fancier.
 
-![code](images/mirror-closeup.jpeg)
+![code](../images/mirror-closeup.jpeg)
 <figcaption>Detailed view of display</figcaption>
 
 <br />
 
-![code](images/mirror-in-situ.jpeg)
+![code](../images/mirror-in-situ.jpeg)
 <figcaption>Mirror mounted to wall</figcaption>
 
 <br />

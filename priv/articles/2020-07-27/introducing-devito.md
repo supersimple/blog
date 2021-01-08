@@ -9,22 +9,22 @@ Today I’d like to introduce an open-source software project I have been workin
 
 [Devito](https://trydevi.to) is a URL-shortener that comes out-of-the-box ready for deployment to [Gigalixir](https://gigalixir.com/). What makes [Devito](https://trydevi.to) special is that it is designed to work with it’s own CLI. No browser plugins. No web-app. Everything you need is accessible right through your terminal.
 
-![Devito loves Elixir](images/devito+elixir.png)
+![Devito loves Elixir](../images/devito+elixir.png)
 <figcaption>Devito ❤️ Elixir</figcaption>
 
 ## The Interface
 
 All actions for [Devito](https://trydevi.to) can be performed through the CLI, and that is the recommended interface. After setting your configs, you will mostly want to generate links or see existing links. Here is what that looks like:
-![Sample Code](images/devito-code1.png)
+![Sample Code](../images/devito-code1.png)
 <figcaption>setting the config</figcaption>
 
-![Sample Code](images/devito-code2.png)
+![Sample Code](../images/devito-code2.png)
 <figcaption>generating a link with a random shortcode</figcaption>
 
-![Sample Code](images/devito-code3.png)
+![Sample Code](../images/devito-code3.png)
 <figcaption>generating a link with a custom shortcode</figcaption>
 
-![Sample Code](images/devito-code4.png)
+![Sample Code](../images/devito-code4.png)
 <figcaption>Viewing all existing links</figcaption>
 
 ## Why Gigalixir?

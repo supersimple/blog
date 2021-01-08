@@ -6,7 +6,7 @@
 }
 ---
 
-![code](images/first-title.png)
+![code](../images/first-title.png)
 
 <br />
 
@@ -22,7 +22,7 @@ As of this writing, there are about 3,600 hex packages available on hex.pm. That
 
 First things first, you need to install hex on your machine. If you have elixir installed, chances are you already have it. (If not, go to http://elixir-lang.org/install.html ) You can check by typing: `mix hex -v` you should get an output like this:
 
-![code](images/first-code1.png)
+![code](../images/first-code1.png)
 <figcaption>mix hex -v</figcaption>
 
 <br />
@@ -49,7 +49,7 @@ If you are porting a library from another ecosystem, it is common to prepend (or
 
 Time to start writing code. To start, type: `mix new <yourprojectname>` . You should see an output like this:
 
-![code](images/first-code2.png)
+![code](../images/first-code2.png)
 <figcaption>mix new</figcaption>
 
 <br />
@@ -58,7 +58,7 @@ Time to start writing code. To start, type: `mix new <yourprojectname>` . You sh
 
 Metadata will help define your package dependencies as well as describe it to potential users. Open your `mix.exs` file and you’ll see a template like this:
 
-![code](images/first-code3.png)
+![code](../images/first-code3.png)
 <figcaption>mix.exs</figcaption>
 
 <br />
@@ -67,7 +67,7 @@ _Hex packages are required to follow semantic versioning._
 
 Dependencies are defined in a private method, `deps/0`. This is where you will document any other packages your package requires (if any.) For example, you might want to require ex_doc to generate documentation:
 
-![code](images/first-code4.png)
+![code](../images/first-code4.png)
 <figcaption>mix.exs</figcaption>
 
 <br />
@@ -78,7 +78,7 @@ To learn more about dependencies, type: `mix help deps`.
 
 In addition to the attributes predefined for you in your mix file, you will need to include a description and package information.
 
-![code](images/first-code5.png)
+![code](../images/first-code5.png)
 <figcaption>mix.exs</figcaption>
 
 <br />
@@ -94,7 +94,7 @@ Submit Your Package
 
 You are almost there. Now it’s time to submit your package to hex.pm to be shared with the elixir community. Type: `mix hex.publish`. You’ll see some output as it reads your package. **Review it carefully**.
 
-![code](images/first-code6.png)
+![code](../images/first-code6.png)
 <figcaption>mix hex.publish</figcaption>
 
 <br />

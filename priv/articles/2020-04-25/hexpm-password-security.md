@@ -6,7 +6,7 @@
 }
 ---
 
-![warning image](images/hibp-title.png)
+![warning image](../images/hibp-title.png)
 <figcaption>The warning you’ll see when your password has been breached.</figcaption>
 
 <br />
@@ -30,7 +30,7 @@ The better solution is to prevent a bad actor from gaining access to your Hex ac
 The first step to alerting our users is to determine if their account is at risk. To do this, we are using the [haveibeenpwned API](https://haveibeenpwned.com/API/v2#PwnedPasswords).
 
 This API was developed and maintained by developer Troy Hunt. He does this at his own expense for the benefit of the entire web 👏. The API provides a very simple interface; It is not rate-limited, and no authentication is required.
-![API example](images/hibp-terminal.gif)
+![API example](../images/hibp-terminal.gif)
 <figcaption>Example response from haveibeenpwned.com</figcaption>
 
 <br />
@@ -42,7 +42,7 @@ As a practical matter, the haveibeenpwned API needs to have access to un-hashed 
 Since Hex never stores your password in a way that would allow us to decrypt it, we cannot just check every password in our database for breaches. (This is a good thing!) As a result, checking your password for weakness can only happen when you submit it in a form. This happens to be when you log in, and when you reset your password.
 
 In each event, while in the form controller, we check your password against the haveibeenpwned API. If we have determined your password has been breached, we add a flash warning.
-![code](images/hibp-code.png)
+![code](../images/hibp-code.png)
 <figcaption>Code for checking passwords</figcaption>
 
 <br />

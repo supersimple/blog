@@ -4,27 +4,25 @@
     @apply border-pink-600 border-t-4;
     font-family: 'Roboto', sans-serif;
   }
-
-  div#home-container {
-    @apply my-6;
-
-    section {
-      @apply flex items-stretch space-x-6 mb-6;
-
-      article {
-        @apply rounded shadow-lg border-gray-100 border w-1/2 relative;
-        height: 240px;
-        border-bottom-width: 24px;
-
-        h2 {
-          @apply font-black text-6xl tracking-tight p-4 top-0.5 absolute text-gray-100;
-        }
-
-        h1 {
-          @apply block w-full font-black text-2xl capitalize tracking-tight p-4 bottom-0.5 absolute border-b border-pink-600;
-        }
-      }
+  
+  body.homepage {
+    background: #2a2a2a; border-top: 0; font-family: Helvetica, Arial, sans-serif; height: 100%;
+    #banner{
+      height: 66vh;
+      display: block;
+      text-indent: -9999px;
     }
+    #desc{margin: 0 0 0 5vw; height: 15vh;}
+    h1{float: left; clear:both; letter-spacing: -1px; background-color: #fff; line-height: 7.5vh; font-size: 4.5vh; font-weight: bold; color: #2a2a2a; padding: 0 10px; margin: 0; white-space: nowrap;}
+    h2{float: left; clear:both; letter-spacing: -1px; background-color: #ff00f0; line-height: 7.5vh; font-size: 4vh; font-weight: normal; color: #fff; padding: 0 10px; margin: 0; white-space: nowrap;}
+    #links{margin: 3vh 0 0 5vw;}
+    #links a{width: 3.5vh; height: 3.5vh; display: block; float:left; margin: 0 2vh 0 0;}
+    #links a img{width: 3.5vh; height: 3.5vh;}
+  }
+
+  img#logo {
+    @apply mx-auto mt-4;
+    width: 40px; height: 40px;
   }
 
   article.post {
@@ -102,8 +100,19 @@
   
 
   footer {
-    img {
-      width: 40px; height: 40px; margin: auto;
+    @apply bg-pink-600 border-t-2 border-pink-800 py-6 mt-12;
+    h1 {
+      @apply font-black text-6xl capitalize tracking-tight py-4;
     }
+    nav {
+      @apply container mx-auto max-w-screen-md p-12 text-white;
+
+      ul {
+        li {
+          @apply text-lg underline leading-loose;
+        }
+      }
+    }
+    
   }
 }

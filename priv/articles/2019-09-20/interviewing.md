@@ -13,7 +13,7 @@ The purpose of this article is to point out just one issue I have observed conti
 
 ## Things you know
 
-![venn diagram](images/interiewing-1.png)
+![venn diagram](../images/interiewing-1.png)
 <figcaption>Things you know</figcaption>
 <br />
 
@@ -21,7 +21,7 @@ When assessing a candidate, you are working from a point of the technical things
 
 ## Things they know
 
-![venn diagram](images/interiewing-2.png)
+![venn diagram](../images/interiewing-2.png)
 <figcaption>Things they know</figcaption>
 <br />
 
@@ -29,14 +29,14 @@ The candidate comes in to the interview with all of their technical knowledge, w
 
 ## “This candidate is not a senior”
 
-![venn diagram](images/interiewing-3.png)
+![venn diagram](../images/interiewing-3.png)
 <figcaption>Low overlap in knowledge</figcaption>
 
 When you have a low overlap between your technical knowledge and the candidates knowledge your assessment is that the candidate is not qualified. Notice the 2 circles representing knowledge are the same size, but you are only seeing the overlapping part of the diagram. Therefore you come to the conclusion the candidate only holds a small fraction of the knowledge you hold.
 
 ## “This candidate is perfect”
 
-![venn diagram](images/interiewing-4.jpeg)
+![venn diagram](../images/interiewing-4.jpeg)
 <figcaption>High overlap in knowledge</figcaption>
 <br />
 
@@ -44,7 +44,7 @@ When there is a large overlap in knowledge, the candidate seems to be smart and 
 
 ## “This candidate knows nothing”
 
-![venn diagram](images/interiewing-5.png)
+![venn diagram](../images/interiewing-5.png)
 <figcaption>Disparity in knowledge with no overlap</figcaption>
 <br />
 
@@ -52,7 +52,7 @@ This is the scariest scenario to me. This diagram reflects a candidate with a mu
 
 ## “This candidate is not a senior”
 
-![venn diagram](images/interiewing-6.png)
+![venn diagram](../images/interiewing-6.png)
 <figcaption>Disparity in knowledge with low overlap</figcaption>
 <br />
 
@@ -60,7 +60,7 @@ This one is almost as bad. In this case the candidate has a large knowledge base
 
 ## Some perspective to keep in mind
 
-![venn diagram](images/interiewing-7.png)
+![venn diagram](../images/interiewing-7.png)
 <figcaption>Your knowledge relative to all things knowable</figcaption>
 <br />
 

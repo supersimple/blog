@@ -5,10 +5,10 @@
   description: "Identifying code taht could be in changesets that would be better in a plug."
 }
 ---
-![plug](images/plug.png)
+![plug](../images/plug.png)
 
 I recently ran into this error on a project I have been working on:
-![code](images/plug-code1.png)
+![code](../images/plug-code1.png)
 <figcaption>error message</figcaption>
 
 <br />
@@ -22,7 +22,7 @@ Typically in Phoenix I will use a changeset to validate incoming requests. In th
 The problem is this project has 40 routes that expect UUIDs, spread across 15 controllers. Adding changeset validations to all of those controllers and actions will take a lot of time and effort.
 
 I decided to take another approach. Since the parameters I want to validate are all named `:id` or `:project_id` I thought I could validate them with a plug. The plug is used in the pipeline for every request and looks like this:
-![code](images/plug-code2.png)
+![code](../images/plug-code2.png)
 <figcaption>plug code</figcaption>
 
 <br />

@@ -14,4 +14,8 @@ defmodule Blog.Articles do
   def get_post_by_id(id) do
     Enum.find(all_articles(), &(&1.id == id))
   end
+
+  def get_latest do
+    List.first(list_articles())
+  end
 end
