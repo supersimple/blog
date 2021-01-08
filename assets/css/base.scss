@@ -1,0 +1,109 @@
+@layer components {
+  
+  body {
+    @apply border-pink-600 border-t-4;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  div#home-container {
+    @apply my-6;
+
+    section {
+      @apply flex items-stretch space-x-6 mb-6;
+
+      article {
+        @apply rounded shadow-lg border-gray-100 border w-1/2 relative;
+        height: 240px;
+        border-bottom-width: 24px;
+
+        h2 {
+          @apply font-black text-6xl tracking-tight p-4 top-0.5 absolute text-gray-100;
+        }
+
+        h1 {
+          @apply block w-full font-black text-2xl capitalize tracking-tight p-4 bottom-0.5 absolute border-b border-pink-600;
+        }
+      }
+    }
+  }
+
+  article.post {
+    @apply p-6;
+
+    h1 {
+      @apply font-black text-6xl capitalize tracking-tight py-4;
+    }
+
+    h2 {
+      @apply font-bold text-4xl capitalize tracking-tight pt-8 pb-2;
+    }
+  
+    h3 {
+      @apply font-bold text-2xl capitalize tracking-tight pt-8 pb-2;
+    }
+  
+    h3.author {
+      @apply font-normal normal-case italic text-base text-gray-700 pt-0 pb-2;
+    }
+  
+    blockquote {
+      @apply font-thin text-4xl tracking-tight p-4 italic text-pink-600 leading-normal border-t border-b border-pink-600 my-4;
+      font-family: 'EB Garamond', serif;
+  
+      p {
+        @apply px-16;
+      }
+    }
+  
+    img {
+      @apply mx-auto mt-4 w-full;
+    }
+  
+    figcaption {
+      @apply text-center text-gray-500;
+      font-family: 'EB Garamond', serif;
+    }
+  
+    hr {
+      @apply border-dotted border-t-4 border-pink-600 w-1/2 mx-auto my-4; 
+    }
+  
+    p {
+      @apply py-2;
+  
+      a {
+        @apply underline;
+      }
+    }
+  
+    code {
+      @apply bg-gray-200 text-pink-600;
+    }
+
+    ul {
+      @apply list-disc;
+    }
+    ul.tags {
+      @apply list-none;
+      li {
+        @apply transform rotate-12 -skew-y-12 float-left block bg-pink-600 px-2 py-1 text-sm text-white mr-0;
+      }
+      li:nth-child(2n+0) {
+        @apply bg-indigo-600
+      }
+      li:nth-child(3n+0) {
+        @apply bg-purple-600
+      }
+    }
+  }
+
+  
+  
+  
+
+  footer {
+    img {
+      width: 40px; height: 40px; margin: auto;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<% rows = Enum.chunk_every(@articles, 2) %>
+<div id="home-container">
+  <%= for row <- rows do %>
+    <section>
+      <%= for article <- row do %>
+        <article>
+          <h2><%= Calendar.strftime(article.date, "%Y %m %d") %></h2>
+          <a href="/<%= article.id %>">
+            <h1><%= article.title %></h1>
+          </a>
+        </article>
+      <% end %>
+    </section>
+  <% end %>
+</div>
