@@ -1,36 +1,36 @@
 %{
-  title: "Engineering at SimpleBet: Year One",
+  title: "Engineering at Simplebet: Year One",
   author: "Todd Resudek",
   tags: ~w(elixir),
-  description: "Recap of my first year working at SimpleBet"
+  description: "Recap of my first year working at Simplebet"
 }
 ---
-## Why SimpleBet?
-Before recapping my first year of work, it is important to talk about how I came to [SimpleBet](https://simplebet.io) in the first place.
+## Why Simplebet?
+Before recapping my first year of work, it is important to talk about how I came to [Simplebet](https://simplebet.io) in the first place.
 
 Previously, I worked as an Elixir engineer at [Weedmaps](https://weedmaps.com). I was there for 3.5 years and had a lot of great opportunities and met a lot of great people. However, I felt like I was starting to stagnate a little and wanted to work on a project that would challenge me more.
 
-I interviewed at a number of places, but ultimately there were a few things SimpleBet offered that intrigued me.
+I interviewed at a number of places, but ultimately there were a few things Simplebet offered that intrigued me.
 
 I liked that I would still be working in a domain that was recently legalized and did not yet have market leaders or even existing solutions. Working in those domains, there is no one to copy. There is no saying, "how does xyz do it?"
 
-I also liked the constraints of the product. Most betting on sports is on the outcome of an entire match. You place your bet and the market is settled 2 or 3 hours later. SimpleBet offers micro-markets that open and settle within seconds. For example, betting on whether the next pitch will be a ball or a strike.
+I also liked the constraints of the product. Most betting on sports is on the outcome of an entire match. You place your bet and the market is settled 2 or 3 hours later. Simplebet offers micro-markets that open and settle within seconds. For example, betting on whether the next pitch will be a ball or a strike.
 
-I knew these constraints would require me to carefully consider design decisions. Making round trips to postgres isn't possible for a lot of what SimpleBet does. It requires a lot of coordination of systems and a lot of observeability to get right.
+I knew these constraints would require me to carefully consider design decisions. Making round trips to postgres isn't possible for a lot of what Simplebet does. It requires a lot of coordination of systems and a lot of observeability to get right.
 
-Finally, the team I met while interviewing were a great group of smart people, from different backgrounds that I knew I could learn from. SimpleBet has a mix of PhD's and bootcamper's and everything in between.
+Finally, the team I met while interviewing were a great group of smart people, from different backgrounds that I knew I could learn from. Simplebet has a mix of PhD's and bootcamper's and everything in between.
 
 ## January 7, 2020
 
-My first day at SimpleBet.
+My first day at Simplebet.
 
 _([My work computer](https://sprsm.pl/xps13) was sent to me the week before, so I was able to set that up in advance.)_
 
 I woke up earlier than usual since the office is 2 time zones ahead of me. As it turns out the engineer that was going to help onboard me actually 4 time zones ahead, so he was waiting. The first couple weeks were spent getting familiar with the domain and the existing code.
 
-I spent my 3rd week at the SimpleBet offices in New York City. My teammates from Idaho, Ireland,  and Uruguay flew in as well, so we were able to meet and kick off our first project. I can't discuss specifics of the project, but we began immediately using Phoenix LiveView. It was exactly what I was looking for  - a greenfield project that was using cutting-edge technologies.
+I spent my 3rd week at the Simplebet offices in New York City. My teammates from Idaho, Ireland,  and Uruguay flew in as well, so we were able to meet and kick off our first project. I can't discuss specifics of the project, but we began immediately using Phoenix LiveView. It was exactly what I was looking for  - a greenfield project that was using cutting-edge technologies.
 
-> If it isn't obvious, we really like the BEAM at SimpleBet.
+> If it isn't obvious, we really like the BEAM at Simplebet.
 
 ## February and March
 
@@ -42,9 +42,9 @@ The next conference was [Lonestar Elixir](https://www.youtube.com/watch?v=BatvEJ
 
 Finally, I spoke at [CodeBEAM SF](https://www.youtube.com/watch?&v=Gt6tough35c) along with my colleague, [Dave Lucia](https://github.com/davydog187/).
 
-I always enjoy speaking at conferences, and it was great to be able to represent SimpleBet to the Elixir community.
+I always enjoy speaking at conferences, and it was great to be able to represent Simplebet to the Elixir community.
 
-I was also able to spend some time launching our Open-Source Software guild at work, and deploying our [TIL instance](https://til.simplebet.io). One of the parts I enjoy most about SimpleBet is how much value is placed on contributing to OSS. I am able to spend time on Hex, and my co-workers are maintainers of Rustler, Commanded, and a lot of the Telemetry libraries.
+I was also able to spend some time launching our Open-Source Software guild at work, and deploying our [TIL instance](https://til.simplebet.io). One of the parts I enjoy most about Simplebet is how much value is placed on contributing to OSS. I am able to spend time on Hex, and my co-workers are maintainers of Rustler, Commanded, and a lot of the Telemetry libraries.
 
 ## COVID-19
 
@@ -56,9 +56,9 @@ It's hard to build a sports gaming business for a sport that isn't being played.
 
 ## Visualization Tools
 
-My team immediately shifted our focus onto a product that would serve both as an internal broker for any sport, as well as a way for potential customers to visualize what SimpleBet offers.
+My team immediately shifted our focus onto a product that would serve both as an internal broker for any sport, as well as a way for potential customers to visualize what Simplebet offers.
 
-It was another greenfield project, and a chance to work with some new technologies and get reacquainted with some familiar ones. We started with [Tailwind CSS](https://tailwindcss.com), which is great. Along with LiveView for the UI layer. On the backend, the broker aggregated all of our machine learning pricing into a unified RabbitMQ broker. (If it isn't obvious, we really like the BEAM at SimpleBet.)
+It was another greenfield project, and a chance to work with some new technologies and get reacquainted with some familiar ones. We started with [Tailwind CSS](https://tailwindcss.com), which is great. Along with LiveView for the UI layer. On the backend, the broker aggregated all of our machine learning pricing into a unified RabbitMQ broker. (If it isn't obvious, we really like the BEAM at Simplebet.)
 
 ## All in on Football
 
@@ -82,7 +82,7 @@ Any slowdown in the system and the user experience degrades significantly. 
 
 ---
 
-We were able to launch the app for week 1 of the NFL, called PlayAction, which you can find in the [Fanduel](https://fanduel.com) app. It really makes for a great second-screen experience. So far it has been a great success, and something I think everyone at SimpleBet is really proud of.
+We were able to launch the app for week 1 of the NFL, called PlayAction, which you can find in the [Fanduel](https://fanduel.com) app. It really makes for a great second-screen experience. So far it has been a great success, and something I think everyone at Simplebet is really proud of.
 
 ## Tip-off of NBA
 
