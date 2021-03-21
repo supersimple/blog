@@ -56,7 +56,7 @@ The H1 shows the selected date and is a button that triggers opening and closing
 Next is the calendar container. It is bound to the `calendar_open` property using the `x-show` listener. And uses the `@click.away` listener which tells it to hide when the user click on anything outside of the element.
 
 ## LiveView Events
-The previous month and next month buttons use the `phx-click` listener. This will send a message to the LiveView. By default, the message will be sent to the parent LiveView. It was important to me for the components to be reusable and as self-contained as possible. Adding the `phx-target="<%= @myself %>" tells the component to handle the event locally.
+The previous month and next month buttons use the `phx-click` listener. This will send a message to the LiveView. By default, the message will be sent to the parent LiveView. It was important to me for the components to be reusable and as self-contained as possible. Adding the `phx-target="<%= @myself %>"` tells the component to handle the event locally.
 
 ![component template](../images/datepicker-code3.png)
 
