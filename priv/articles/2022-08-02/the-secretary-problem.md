@@ -52,21 +52,21 @@ Back to the code...
 ![Rejections](../images/20220802/rejections.png)
 After randomizing the set of applicants we split them up into the rejected list and the remaining list. The target_in_set/1 function finds the place in the list closest to 37% where we split them.
 
-The rejections are nto just in vane. We are using them to gather information. Specifically, we want to know how good the best of those rejected candidates is. We are comparing the remaining applicants to that person.
+The rejections are not just in vane. We are using them to gather information. Specifically, we want to know how good the best of those rejected candidates is. We are comparing the remaining applicants to that person.
 
 ![Comparing](../images/20220802/select-or-skip.png)
 The select_or_skip/2 function is used for that comparison. If you are new to Elixir, this might look odd to you. This is an example of a recursive function. 
 
 The first 2 function heads will stop the recursion. The first function head stops the recursion when we get to the last candidate. No matter how bad that candidate is, we have to hire someone for this job. This actually happens only when the best candidate was in the rejection list.
 
-The second function head is the important one. The logic behind this solution is that you hire the first applicant that exceeds to quality of the highest rejected candidate. This function exits when it finds that applicant.
+The second function head is the important one. The logic behind this solution is that you hire the first applicant that exceeds the quality of the highest rejected candidate. This function exits when it finds that applicant.
 
 The last function head performs the recursion. If neither of the above criteria were met, it walks the list.
 
 ## Testing
 As with any theory, it can only be validated by testing.
 
-To serve that purpose, I added the sample/2 function. It takes a list of candidates (there quality score to be exact), and the number of samples to run.
+To serve that purpose, I added the sample/2 function. It takes a list of candidates (their quality score to be exact), and the number of samples to run.
 ![samples](../images/20220802/sample.png)
 
 This function returns a list of the quality score of the candidate selected in each sample.
@@ -79,5 +79,8 @@ One way to evaluate that is to see how frequently the highest quality candidate 
 I set up a Livebook to run some tests of the code and to see how it performs.
 You can see the results. Notice how they change as the sample size increases. As you approach infinity, that number should get closer to 37.8%.
 ![results](../images/20220802/results.gif)
+
+## Conclusion
+This was a fun logic problem to learn about and solve using the Elixir standard library. While the idea of hiring a secretary this way seems contrived, I do think this algorithm makes more sense in dating. Given a number of years between when you start dating and when you reach the oldest age you would like to be married, you can apply this same logic. Reject all of the partners you date in the first 37.8% of the time you have given yourself. Then, marry the first partner you meet that exceeds all the other partners you've dated.
 
 The code and the livebook are available in this [Github repo](https://github.com/supersimple/secretary-problem).
