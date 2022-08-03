@@ -36,13 +36,21 @@ It takes a list of candidates (represented as their qualification score - higher
 
 First, it randomizes the order of candidates.
 
-Then we get to the interest part of the solution - the rejections.
+Then we get to the interesting part of the solution - the rejections.
 
 Conceptually, when trying to find the best applicant, you are judging them against their competitors.
 
 Given a set of applicants, knowing you must hire exactly one of them, you are not hiring the best secretary in the world, just the best secretary in your applicant pool. This fact remains true no matter what position you are hiring for.
 
 In order to make a judgement, you first need to get some information on the available candidates. You cannot judge an applicants relative ability without information on the applicants you are comparing them against.
+
+---
+### The 1/e law
+
+The 1/e Law takes its name from the asymptotic behaviour of the success probability: the ratio 1/e corresponds precisely to the value at which the success probability P(R*) converges for large N. Here, the letter e denotes the Euler’s number, and indeed 1/e is about 1/2.72≈0.37, as can be seen from the plot.
+![graph](../images/20220802/graph.jpg)
+<figcaption>https://www.cantorsparadise.com/math-based-decision-making-the-secretary-problem-a30e301d8489</figcaption>
+---
 
 The 1/e stopping rule applies here. It is named such because it has been determined that using 1/e (or approximately 0.37) yields the best results about 37% of the time, which is the best odds in this scenario.
 
