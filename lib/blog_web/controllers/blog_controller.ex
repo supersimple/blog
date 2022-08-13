@@ -2,7 +2,6 @@ defmodule BlogWeb.BlogController do
   use BlogWeb, :controller
 
   def index(conn, _params) do
-    # TODO: redirect to latest
     article = Blog.Articles.get_latest()
     redirect(conn, to: Routes.blog_path(conn, :show, article.id))
   end

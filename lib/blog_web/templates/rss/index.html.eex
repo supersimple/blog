@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Super Simple</title>
+    <link>https://supersimple.org/blog</link>
+    <atom:link href="https://supersimple.org/rss" rel="self" type="application/rss+xml" />
+    <description>Technology articles from Todd Resudek</description>
+    <language>en</language>
+    <copyright>Copyright <%= DateTime.utc_now.year %> Super Simple</copyright>
+    <lastBuildDate><%= to_rfc822(Blog.RSS.last_build_date()) %></lastBuildDate>
+    <category>Technology</category>
+    <ttl>60</ttl>
+
+    <%= for article <- @articles do %>
+      <item>
+        <title><%= article.title %></title>
+        <link>https://supersimple.org/blog/<%= article.id %></link>
+        <guid>https://supersimple.org/blog/<%= article.id %></guid>
+        <description><![CDATA[ <%= article.description %> ]]></description>
+        <category><%= List.first(article.tags) %></category>
+        <pubDate><%= to_rfc822(article.date) %></pubDate>
+        <source url="https://supersimple.org/rss">Super Simple Blog</source>
+      </item>
+    <% end %>
+  </channel>
+</rss>
