@@ -4,7 +4,10 @@
 <h2>Human Software Developer</h2>
 </div>
 <div id="links">
-<a href="https://twitter.com/sprsmpl"><img alt="twitter" src="images/twitter.svg"></a>
-<a href="https://github.com/supersimple"><img alt="github" src="images/github.svg"></a>
-<a href="/blog"><img alt="blog" src="images/blog-icon.svg"></a>
+  <a href="https://twitter.com/sprsmpl">Twitter</a>
+  <a href="https://github.com/supersimple">Github</a>
+  <a href="/blog">Blog</a>
+  <a href="https://trydevi.to">Devito</a>
+  <a href="https://colour.wtf">WTF Colour?</a>
+  <a href="https://randomuu.id">RandomUUID</a>
 </div>
