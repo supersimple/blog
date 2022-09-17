@@ -21,12 +21,25 @@
   }
 
   img#logo {
-    @apply mx-auto mt-4;
+    @apply mx-auto my-4;
     width: 40px; height: 40px;
   }
 
+  header {
+    @apply bg-gray-700 py-4;
+    h1 {
+      @apply text-white text-6xl capitalize tracking-tight py-4;
+      font-family: 'Source Serif Pro', serif;
+      font-weight: 700;
+    }
+
+    h3.author {
+      @apply font-normal normal-case italic text-base text-gray-100 pt-0 pb-2;
+    }
+  }
+
   article.post {
-    @apply p-6;
+    @apply p-6 text-lg;
 
     h1 {
       @apply font-black text-6xl capitalize tracking-tight py-4;
@@ -38,10 +51,6 @@
   
     h3 {
       @apply font-bold text-2xl capitalize tracking-tight pt-8 pb-2;
-    }
-  
-    h3.author {
-      @apply font-normal normal-case italic text-base text-gray-700 pt-0 pb-2;
     }
   
     blockquote {
@@ -59,7 +68,7 @@
   
     figcaption {
       @apply text-center text-gray-500;
-      font-family: 'EB Garamond', serif;
+      font-family: 'Source Serif Pro', serif;
     }
   
     hr {
@@ -94,10 +103,6 @@
       }
     }
   }
-
-  
-  
-  
 
   footer {
     @apply bg-pink-600 border-t-2 border-pink-800 py-6 mt-12;

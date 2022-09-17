@@ -1,10 +1,16 @@
+<%= if @article do %>
+    <header>
+        <div class="container mx-auto max-w-screen-md px-12">
+            <img src="../images/skull.svg" id="logo" alt="logo"/>
+            <h1><%= @article.title %></h1>
+            <h3 class="author">Published by: <%= @article.author %> on <%= Calendar.strftime(@article.date, "%B %-d, %Y") %></h3>
+        </div>
+    </header>
+<% end %>
 <main role="main" class="container mx-auto max-w-screen-md px-6">
-<img src="../images/skull.svg" id="logo" alt="logo"/>
 <section>
 <%= if @article do %>
     <article class="post">
-        <h1><%= @article.title %></h1>
-        <h3 class="author">Published by: <%= @article.author %> on <%= Calendar.strftime(@article.date, "%B %-d, %Y") %></h3>
         <%= raw @article.body %>
     </article>
 <% else %>
