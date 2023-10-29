@@ -31,7 +31,7 @@ For writing code, I started out using BBEdit, then moved to TextMate around 2006
 ![VS Code](../images/uses/vscode.png)
 
 And, my preferred browser is Firefox.
-![firefox](firefox.png)
+![firefox](../images/uses/firefox.png)
 
 ## Other
 To organize myself and generally noodle on ideas, I use a dot-ruled Moleskine and a Kuru Toga. If you have never tried that pencil, I strongly recommend getting one. They are affordable and simply the best tool for the job.
