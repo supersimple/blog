@@ -120,6 +120,8 @@ Almost done.
 
 On the Pi terminal, type: `raspi-config` and activate the option for “wait for network”. While you are there, this is a good opportunity to change your password from the default to something a little more secure.
 
+Newer versions of Raspbian default to Wayland. The code in this tutorial works on X11, and you can switch to X11 in raspi-config as well.
+
 The last step is to change some config files on the Raspberry Pi.
 
 Next, there are some special files used by the Raspberry Pi OS to startup the machine and put into a proper kiosk mode.
@@ -134,6 +136,7 @@ Now type:sudo nano `/etc/lightdm/lightdm.conf` Look for the line that starts wit
 This will tell the Pi not to go to sleep and not show a cursor.
 
 Finally, type: `sudo nano ~/.config/lxsession/LXDE-pi/autostart` and add these contents:
+(note: in newer releases of Raspian, this file is located at `/etc/xdg/lxsession/LXDE-pi/autostart`)
 
 ![code](../images/dashboard-code5.png)
 <figcaption>autostart</figcaption>
@@ -141,6 +144,13 @@ Finally, type: `sudo nano ~/.config/lxsession/LXDE-pi/autostart` and add these c
 <br />
 
 This file will start up the browser in kiosk mode, hide any error dialogs and the browser chrome, and start the phoenix app using mix. _(notice I have the app saved to /home/pi/dashboard, and have my ENV VARs exported from a file called “.env”.)_
+
+Raspberry Pi 4 is capable of 4k video. However, chromium doesn't seem to play nicely with 4k resolution in kiosk mode. I recommend scaling down the resolution to 1080 on your display if it is capable of 4k. The RPi4 will try to match it's oputput to the display, so you really need to persuade it to start up in 1080. If you try just changing the display settings via UI, it will reset after a restart.
+
+Force 1080 on startup by adding these 2 lines:
+`hdmi_group=1`
+`hdmi_mode=16`
+to this file: `/boot/firmware/config.txt`
 
 ---
 
